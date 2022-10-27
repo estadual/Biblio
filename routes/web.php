@@ -26,5 +26,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/cadastrar', [App\Http\Controllers\CategoriaController::class, 'cadastrar'])->name('cadastrar');
-Route::get('/create', [App\Http\Controllers\LivroController::class, 'cadastrar'])->name('cadastrar.livro');
 Route::post('/salvar', [App\Http\Controllers\CategoriaController::class, 'store'])->name('salvar');
+
+Route::get('/create', [App\Http\Controllers\LivroController::class, 'cadastrar'])->name('cadastrar.livro');
+
+Route::resource('reservas', App\Http\Controllers\ReservaController::class );
